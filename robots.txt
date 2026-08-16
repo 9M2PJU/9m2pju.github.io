@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://9m2pju.github.io/sitemap.xml
