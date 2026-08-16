@@ -3,53 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9M2PJU — Amateur Radio Station & Open Source Engineering</title>
+    <title>9M2PJU - Amateur Radio Station & Open Source Projects</title>
     
     <!-- SEO & Metadata -->
-    <meta name="description" content="Official portal of 9M2PJU: Malaysian licensed amateur radio operator, open-source developer, Ubuntu member, APRS/EmComm developer, and maintainer of Aprx & OpenHamClock.">
-    <meta name="keywords" content="9M2PJU, Amateur Radio, Ham Radio, Malaysia, APRS, Aprx, OpenHamClock, MARTS, LoRa APRS, Ubuntu, Linux, EmComm, Packet Radio">
+    <meta name="description" content="Personal website of 9M2PJU, an amateur radio station based in Kuala Lumpur, Malaysia. Open source projects include Aprx installer, OpenHamClock, MeshBeacon, and Arch Linux AUR packages.">
+    <meta name="keywords" content="9M2PJU, Amateur Radio, Ham Radio, Malaysia, Aprx, OpenHamClock, MeshBeacon, APRS, Packet Radio, Arch Linux AUR">
     <meta name="author" content="9M2PJU">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://9m2pju.github.io/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="9M2PJU — Amateur Radio & Open Source Engineering">
-    <meta property="og:description" content="Official website of 9M2PJU: APRS infrastructure, digital modes, Linux engineering, and amateur radio projects in Malaysia.">
+    <meta property="og:title" content="9M2PJU - Amateur Radio Station & Open Source Projects">
+    <meta property="og:description" content="Amateur radio station in Kuala Lumpur, Malaysia. Projects include Aprx installer, OpenHamClock, MeshBeacon, and Arch Linux AUR packages.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://9m2pju.github.io/">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="9M2PJU - Amateur Radio Station">
+    <meta name="twitter:description" content="Amateur radio station in Kuala Lumpur, Malaysia. Projects, blog posts, and Linux tools.">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "9M2PJU",
+      "url": "https://9m2pju.github.io/",
+      "sameAs": [
+        "https://github.com/9M2PJU",
+        "https://hamradio.my",
+        "https://www.qrz.com/db/9M2PJU"
+      ],
+      "jobTitle": "Amateur Radio Operator",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kuala Lumpur",
+        "addressCountry": "Malaysia"
+      }
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         :root {
-            --bg-base: #0a0e17;
-            --bg-surface: #111726;
-            --bg-card: rgba(17, 24, 39, 0.75);
-            --bg-card-hover: rgba(26, 36, 56, 0.9);
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-active: rgba(6, 182, 212, 0.4);
-            
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --text-dim: #6b7280;
+            --bg-page: #0d1117;
+            --bg-surface: #161b22;
+            --bg-card: rgba(22, 27, 34, 0.7);
+            --bg-card-hover: #1c2128;
+            --border-default: #30363d;
+            --border-accent: #0284c7;
 
-            --cyan: #06b6d4;
-            --cyan-glow: rgba(6, 182, 212, 0.15);
-            --amber: #f59e0b;
-            --amber-glow: rgba(245, 158, 11, 0.15);
-            --green: #10b981;
-            --blue: #3b82f6;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
 
-            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-            --radius-md: 12px;
-            --radius-lg: 18px;
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --accent-cyan: #38bdf8;
+            --accent-green: #3fb950;
+            --accent-amber: #d29922;
+
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            --radius-default: 10px;
+            --transition-smooth: all 0.2s ease-in-out;
         }
 
         * {
@@ -63,865 +87,543 @@
         }
 
         body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-base);
-            color: var(--text-main);
+            font-family: var(--font-main);
+            background-color: var(--bg-page);
+            color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.05) 0%, transparent 45%);
-            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 72px;
-            background: rgba(10, 14, 23, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-subtle);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2rem;
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+        a {
+            color: var(--accent-cyan);
             text-decoration: none;
-            color: var(--text-main);
+            transition: var(--transition-smooth);
         }
 
-        .brand-badge {
-            background: linear-gradient(135deg, #06b6d4, #3b82f6);
-            color: #fff;
-            font-family: var(--font-mono);
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: -0.3px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.75rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.92rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--cyan);
-        }
-
-        .nav-cta {
-            background: rgba(6, 182, 212, 0.12);
-            color: var(--cyan) !important;
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            padding: 0.45rem 1rem;
-            border-radius: 8px;
-        }
-
-        .nav-cta:hover {
-            background: var(--cyan) !important;
-            color: #0a0e17 !important;
+        a:hover {
+            text-decoration: underline;
         }
 
         /* Container */
-        .container {
-            max-width: 1200px;
+        .wrapper {
+            max-width: 1080px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 140px 0 80px 0;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
+        /* Header / Navbar */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            background: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-default);
+            z-index: 100;
         }
 
-        .status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: var(--green);
-            padding: 0.35rem 0.85rem;
-            border-radius: 9999px;
-            font-size: 0.82rem;
-            font-family: var(--font-mono);
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--green);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--green);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.15); }
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p.lead {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .hero-actions {
+        .header-inner {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
         }
 
-        .btn {
-            display: inline-flex;
+        .site-logo {
+            display: flex;
             align-items: center;
             gap: 0.6rem;
-            padding: 0.75rem 1.4rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--cyan);
-            color: #0a0e17;
-        }
-
-        .btn-primary:hover {
-            background: #22d3ee;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Telemetry / Station Card */
-        .station-telemetry {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .telemetry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-            margin-bottom: 1.25rem;
-        }
-
-        .telemetry-title {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--cyan);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .telemetry-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .telemetry-item {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 0.9rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .telemetry-label {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
-        }
-
-        .telemetry-value {
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .utc-clock {
-            grid-column: span 2;
-            background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(59, 130, 246, 0.05));
-            border: 1px solid rgba(6, 182, 212, 0.2);
-            text-align: center;
-            padding: 1rem;
-            border-radius: 10px;
-        }
-
-        .utc-clock-time {
-            font-family: var(--font-mono);
-            font-size: 1.6rem;
+            color: var(--text-primary);
             font-weight: 700;
-            color: #38bdf8;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            text-decoration: none;
         }
 
-        /* Section Headings */
-        section {
-            padding: 90px 0;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 680px;
-            margin: 0 auto 3.5rem auto;
-        }
-
-        .section-subtitle {
-            font-family: var(--font-mono);
-            color: var(--cyan);
+        .callsign-pill {
+            font-family: var(--font-code);
             font-size: 0.85rem;
+            background: #1f6feb;
+            color: #ffffff;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
         }
 
-        .section-title {
-            font-size: 2.2rem;
+        nav.site-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        nav.site-nav a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        nav.site-nav a:hover {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        /* Hero */
+        section.hero-section {
+            padding: 70px 0 50px 0;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.4rem;
             font-weight: 800;
+            line-height: 1.2;
             letter-spacing: -0.5px;
             margin-bottom: 1rem;
         }
 
-        .section-desc {
-            color: var(--text-muted);
+        .hero-text p {
+            color: var(--text-secondary);
             font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 580px;
         }
 
-        /* Grid & Cards */
-        .cards-grid {
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid var(--border-default);
+            background: var(--bg-surface);
+            color: var(--text-primary);
+        }
+
+        .btn-link:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        .btn-link.primary {
+            background: #238636;
+            border-color: rgba(240, 246, 252, 0.1);
+            color: #ffffff;
+        }
+
+        .btn-link.primary:hover {
+            background: #2ea043;
+        }
+
+        /* Station Info Box */
+        .station-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-default);
+            padding: 1.25rem;
+        }
+
+        .station-box-header {
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.88rem;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .info-label {
+            color: var(--text-secondary);
+        }
+
+        .info-val {
+            font-family: var(--font-code);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Sections */
+        section.content-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border-default);
+        }
+
+        .section-heading {
+            margin-bottom: 2rem;
+        }
+
+        .section-heading h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .section-heading p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Cards Grid */
+        .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
         }
 
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            transition: var(--transition);
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-default);
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: var(--transition-smooth);
         }
 
-        .card:hover {
+        .project-card:hover {
+            border-color: #58a6ff;
             background: var(--bg-card-hover);
-            border-color: var(--border-active);
-            transform: translateY(-4px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
         }
 
-        .card-top {
-            margin-bottom: 1.25rem;
-        }
-
-        .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: rgba(6, 182, 212, 0.12);
-            color: var(--cyan);
+        .card-head {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
+            gap: 0.6rem;
             margin-bottom: 0.6rem;
-            color: var(--text-main);
         }
 
-        .card-text {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
-        }
-
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 1.25rem;
-        }
-
-        .tag {
-            font-size: 0.72rem;
-            font-family: var(--font-mono);
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            padding: 0.2rem 0.55rem;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .card-footer {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-subtle);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--cyan);
-            font-size: 0.88rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .card-link:hover {
-            color: #38bdf8;
-            transform: translateX(3px);
-        }
-
-        /* Activities / Features List */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-        }
-
-        .feature-item h4 {
+        .card-head i {
+            color: var(--accent-cyan);
             font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .feature-item p {
-            color: var(--text-muted);
+        .card-head h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
             font-size: 0.88rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+        }
+
+        .badge-tag {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            background: rgba(110, 118, 129, 0.2);
+            color: var(--text-secondary);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+        }
+
+        /* AUR List */
+        .aur-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-default);
+            overflow: hidden;
+            font-size: 0.88rem;
+        }
+
+        .aur-table th, .aur-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-default);
+        }
+
+        .aur-table th {
+            background: rgba(0, 0, 0, 0.2);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .aur-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .aur-table code {
+            font-family: var(--font-code);
+            color: var(--accent-cyan);
         }
 
         /* Footer */
-        footer {
-            background: #070a10;
-            border-top: 1px solid var(--border-subtle);
-            padding: 60px 0 30px 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-brand p {
+        footer.site-footer {
+            border-top: 1px solid var(--border-default);
+            padding: 40px 0;
+            margin-top: 40px;
             color: var(--text-muted);
-            font-size: 0.92rem;
-            max-width: 400px;
-            line-height: 1.6;
-        }
-
-        .footer-col h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.25rem;
-            color: var(--text-main);
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.88rem;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--cyan);
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-subtle);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-dim);
             font-size: 0.85rem;
         }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero {
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            section.hero-section {
                 grid-template-columns: 1fr;
-                padding-top: 110px;
+                padding-top: 40px;
             }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero-text h1 {
+                font-size: 1.9rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#" class="nav-brand">
-            <span class="brand-badge">9M2PJU</span>
-            <span class="brand-name">Ham Radio & Open Source</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="https://hamradio.my" target="_blank">Blog (hamradio.my)</a></li>
-            <li><a href="#contact" class="nav-cta">Contact Station</a></li>
-        </ul>
-    </nav>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <a href="/" class="site-logo">
+                <span class="callsign-pill">9M2PJU</span>
+                <span>Ham Radio & Code</span>
+            </a>
+            <nav class="site-nav">
+                <a href="#projects">Projects</a>
+                <a href="#packages">AUR Packages</a>
+                <a href="https://hamradio.my" target="_blank">Blog</a>
+                <a href="https://github.com/9M2PJU" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Main Container -->
-    <main class="container">
+    <!-- Main Content -->
+    <main class="wrapper">
 
         <!-- Hero Section -->
-        <section class="hero" id="home" style="border-top: none;">
-            <div class="hero-content">
-                <div class="status-pill">
-                    <div class="status-dot"></div>
-                    <span>STATION ONLINE — KUALA LUMPUR, MALAYSIA</span>
-                </div>
-                <h1>Amateur Radio & <span>Open Source</span> Engineering</h1>
-                <p class="lead">
-                    Official portal of <strong>9M2PJU</strong>. Bridging packet radio networks, automated APRS gateways, digital telemetry, and Linux systems across Southeast Asia.
+        <section class="hero-section" id="intro">
+            <div class="hero-text">
+                <h1>9M2PJU</h1>
+                <p>
+                    Amateur radio station in Kuala Lumpur, Malaysia. I build and maintain open-source radio tooling, APRS gateway packages, and write articles at <a href="https://hamradio.my" target="_blank">hamradio.my</a>.
                 </p>
-                <div class="hero-actions">
-                    <a href="https://github.com/9M2PJU/aprx-installer" target="_blank" class="btn btn-primary">
-                        <i class="fa-solid fa-satellite-dish"></i> Aprx Installer
+                <div class="hero-links">
+                    <a href="https://github.com/9M2PJU/aprx-installer" target="_blank" class="btn-link primary">
+                        <i class="fa-solid fa-download"></i> Aprx Installer
                     </a>
-                    <a href="https://hamradio.my" target="_blank" class="btn btn-secondary">
-                        <i class="fa-solid fa-globe"></i> Visit hamradio.my
+                    <a href="https://hamradio.my" target="_blank" class="btn-link">
+                        <i class="fa-solid fa-newspaper"></i> Read Blog
                     </a>
-                    <a href="https://www.qrz.com/db/9M2PJU" target="_blank" class="btn btn-secondary">
-                        <i class="fa-solid fa-address-card"></i> QRZ Profile
+                    <a href="https://www.qrz.com/db/9M2PJU" target="_blank" class="btn-link">
+                        <i class="fa-solid fa-id-card"></i> QRZ Profile
                     </a>
                 </div>
             </div>
 
-            <!-- Station Telemetry / Live Clock Card -->
-            <div class="station-telemetry">
-                <div class="telemetry-header">
-                    <div class="telemetry-title">
-                        <i class="fa-solid fa-signal"></i> STATION TELEMETRY
-                    </div>
-                    <span class="tag">MALAYSIA (9M)</span>
+            <!-- Station Details -->
+            <div class="station-box">
+                <div class="station-box-header">
+                    <i class="fa-solid fa-radio"></i> Station Details
                 </div>
-                <div class="telemetry-grid">
-                    <div class="utc-clock">
-                        <div class="telemetry-label">Live Coordinated Universal Time (UTC)</div>
-                        <div class="utc-clock-time" id="utc-clock">00:00:00 UTC</div>
-                    </div>
-                    <div class="telemetry-item">
-                        <div class="telemetry-label">Callsign</div>
-                        <div class="telemetry-value">9M2PJU</div>
-                    </div>
-                    <div class="telemetry-item">
-                        <div class="telemetry-label">Grid Locator</div>
-                        <div class="telemetry-value">OJ03</div>
-                    </div>
-                    <div class="telemetry-item">
-                        <div class="telemetry-label">APRS Frequency</div>
-                        <div class="telemetry-value">144.390 MHz</div>
-                    </div>
-                    <div class="telemetry-item">
-                        <div class="telemetry-label">ITU / CQ Zone</div>
-                        <div class="telemetry-value">Zone 54 / 28</div>
-                    </div>
+                <div class="info-row">
+                    <span class="info-label">Callsign</span>
+                    <span class="info-val">9M2PJU</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Location</span>
+                    <span class="info-val">Kuala Lumpur, Malaysia</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Grid Square</span>
+                    <span class="info-val">OJ03</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">ITU / CQ Zone</span>
+                    <span class="info-val">Zone 54 / Zone 28</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Time Zone</span>
+                    <span class="info-val">UTC+8</span>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <div class="section-header">
-                <div class="section-subtitle">Profile & Affiliations</div>
-                <h2 class="section-title">About 9M2PJU</h2>
-                <p class="section-desc">
-                    Dedicated to advancing amateur radio education, resilient emergency communications, and modernizing packet radio tooling through open-source software.
-                </p>
+        <!-- Projects Section -->
+        <section class="content-section" id="projects">
+            <div class="section-heading">
+                <h2>Open Source Projects</h2>
+                <p>Public software repositories and tools maintained on GitHub.</p>
             </div>
 
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-brands fa-ubuntu"></i></div>
-                        <h3 class="card-title">Ubuntu Member</h3>
-                        <p class="card-text">
-                            Active contributor in the Ubuntu and Arch Linux ecosystems. Maintaining amateur radio AUR packages, containerized ham applications, and embedded radio daemons.
-                        </p>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">Linux</span>
-                        <span class="tag">Packaging</span>
-                        <span class="tag">Docker</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
-                        <h3 class="card-title">MARTS Member</h3>
-                        <p class="card-text">
-                            Active member of the Malaysian Amateur Radio Transmitters' Society (MARTS), supporting national emergency communications, repeater infrastructure, and beacon networks.
-                        </p>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">MARTS</span>
-                        <span class="tag">EmComm</span>
-                        <span class="tag">Regulatory</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-solid fa-newspaper"></i></div>
-                        <h3 class="card-title">HamRadio.my Founder</h3>
-                        <p class="card-text">
-                            Authoring technical deep dives, configuration guides, and antenna theory at <a href="https://hamradio.my" target="_blank" style="color: var(--cyan); text-decoration: none;">hamradio.my</a> to foster knowledge sharing across operators.
-                        </p>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">Technical Blog</span>
-                        <span class="tag">Guides</span>
-                        <span class="tag">Tutorials</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects Section -->
-        <section id="projects">
-            <div class="section-header">
-                <div class="section-subtitle">Open Source Repositories</div>
-                <h2 class="section-title">Featured Software & Tools</h2>
-                <p class="section-desc">
-                    Explore automated deployment scripts, hardware modems, APRS software, and packaging pipelines maintained on GitHub.
-                </p>
-            </div>
-
-            <div class="cards-grid">
+            <div class="grid-cards">
                 <!-- Aprx Installer -->
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                        <h3 class="card-title">APRX Automated Installer</h3>
-                        <p class="card-text">
-                            Universal one-liner installer and cross-platform multi-arch CI/CD pipeline for Aprx APRS IGate & Digipeater daemon (Debian, Fedora, Arch, FreeBSD, macOS, Docker).
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-terminal"></i>
+                            <h3>aprx-installer</h3>
+                        </div>
+                        <p class="card-desc">
+                            Automated installer, pre-built packages (Debian, Fedora, Arch, FreeBSD, macOS), and container images for the Aprx APRS gateway daemon.
                         </p>
                     </div>
-                    <div class="card-tags">
-                        <span class="tag">C</span>
-                        <span class="tag">systemd</span>
-                        <span class="tag">GHCR Docker</span>
-                        <span class="tag">Multi-OS</span>
+                    <div class="card-meta">
+                        <span class="badge-tag">Shell / C / Docker</span>
+                        <a href="https://github.com/9M2PJU/aprx-installer" target="_blank">View Repository &rarr;</a>
                     </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.8rem; color: var(--text-dim);">9M2PJU/aprx-installer</span>
-                        <a href="https://github.com/9M2PJU/aprx-installer" target="_blank" class="card-link">
-                            View Repo <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
+                </article>
 
                 <!-- OpenHamClock -->
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
-                        <h3 class="card-title">OpenHamClock</h3>
-                        <p class="card-text">
-                            Next-generation open-source amateur radio clock, solar-terrestrial propagation monitor, and satellite tracking dashboard optimized for portable operations.
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-clock"></i>
+                            <h3>openhamclock</h3>
+                        </div>
+                        <p class="card-desc">
+                            Amateur radio clock displaying solar flux, geomagnetic indices, DX cluster spots, and satellite tracking for station desks.
                         </p>
                     </div>
-                    <div class="card-tags">
-                        <span class="tag">Solar Metrics</span>
-                        <span class="tag">DX Cluster</span>
-                        <span class="tag">Telemetry</span>
+                    <div class="card-meta">
+                        <span class="badge-tag">C++ / Telemetry</span>
+                        <a href="https://github.com/9M2PJU/openhamclock" target="_blank">View Repository &rarr;</a>
                     </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.8rem; color: var(--text-dim);">9M2PJU/openhamclock</span>
-                        <a href="https://github.com/9M2PJU/openhamclock" target="_blank" class="card-link">
-                            View Repo <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
+                </article>
 
                 <!-- MeshBeacon -->
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3 class="card-title">MeshBeacon & LoRa APRS</h3>
-                        <p class="card-text">
-                            Off-grid disaster response infrastructure combining LoRa packet telemetry with APRS-IS bridging for remote Search & Rescue (SAR) tracking.
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-tower-broadcast"></i>
+                            <h3>meshbeacon</h3>
+                        </div>
+                        <p class="card-desc">
+                            LoRa packet gateway that forwards off-grid radio telemetry to global APRS-IS networks.
                         </p>
                     </div>
-                    <div class="card-tags">
-                        <span class="tag">LoRa</span>
-                        <span class="tag">Mesh</span>
-                        <span class="tag">EmComm</span>
+                    <div class="card-meta">
+                        <span class="badge-tag">LoRa / APRS</span>
+                        <a href="https://github.com/9M2PJU/meshbeacon" target="_blank">View Repository &rarr;</a>
                     </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.8rem; color: var(--text-dim);">9M2PJU/meshbeacon</span>
-                        <a href="https://github.com/9M2PJU/meshbeacon" target="_blank" class="card-link">
-                            View Repo <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Arch Linux AUR Packages -->
-                <div class="card">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fa-brands fa-linux"></i></div>
-                        <h3 class="card-title">Arch Linux AUR Packages</h3>
-                        <p class="card-text">
-                            PKGBUILD maintenance for ham radio digital tools including APRSTac, VarAC-EmComm, UVProTermBT, YTubic, and Mumble ham integrations.
-                        </p>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">AUR</span>
-                        <span class="tag">PKGBUILD</span>
-                        <span class="tag">VarAC</span>
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.8rem; color: var(--text-dim);">AUR Maintainer</span>
-                        <a href="https://aur.archlinux.org/packages?K=9M2PJU" target="_blank" class="card-link">
-                            View Packages <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <!-- Activities Grid -->
-        <section id="activities">
-            <div class="section-header">
-                <div class="section-subtitle">Operational Focus</div>
-                <h2 class="section-title">Station Activities</h2>
-                <p class="section-desc">
-                    Active across various radio spectra and technologies.
-                </p>
+        <!-- Arch Linux Packages Section -->
+        <section class="content-section" id="packages">
+            <div class="section-heading">
+                <h2>Arch Linux AUR Packages</h2>
+                <p>PKGBUILD packages maintained on the Arch User Repository.</p>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h4><i class="fa-solid fa-satellite" style="color: var(--cyan);"></i> APRS & Packet Radio</h4>
-                    <p>Operating VHF 144.390 MHz RX/TX IGates and LoRa APRS trackers with telemetry reporting.</p>
-                </div>
-                <div class="feature-item">
-                    <h4><i class="fa-solid fa-radio" style="color: var(--amber);"></i> HF Digital Modes</h4>
-                    <p>FT8, JS8Call, and VarAC HF emergency digital communication experiments across all bands.</p>
-                </div>
-                <div class="feature-item">
-                    <h4><i class="fa-solid fa-campground" style="color: var(--green);"></i> Portable Field Ops</h4>
-                    <p>Field day expeditions, QRP portable battery stations, and summit activations (SOTA/POTA).</p>
-                </div>
-                <div class="feature-item">
-                    <h4><i class="fa-solid fa-graduation-cap" style="color: var(--blue);"></i> Mentoring & Training</h4>
-                    <p>Supporting new ham radio applicants and conducting technical workshops on software defined radio (SDR).</p>
-                </div>
-            </div>
+            <table class="aur-table">
+                <thead>
+                    <tr>
+                        <th>Package Name</th>
+                        <th>Description</th>
+                        <th>AUR Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>aprstac</code></td>
+                        <td>Tactical APRS client interface</td>
+                        <td><a href="https://aur.archlinux.org/packages/aprstac" target="_blank">aur.archlinux.org/packages/aprstac</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>varac-emcomm</code></td>
+                        <td>VarAC digital communication setup scripts</td>
+                        <td><a href="https://aur.archlinux.org/packages/varac-emcomm" target="_blank">aur.archlinux.org/packages/varac-emcomm</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>uvprotermbt</code></td>
+                        <td>Bluetooth terminal tool for UV-Pro series</td>
+                        <td><a href="https://aur.archlinux.org/packages/uvprotermbt" target="_blank">aur.archlinux.org/packages/uvprotermbt</a></td>
+                    </tr>
+                    <tr>
+                        <td><code>ytubic</code></td>
+                        <td>Media download and playback utility</td>
+                        <td><a href="https://aur.archlinux.org/packages/ytubic" target="_blank">aur.archlinux.org/packages/ytubic</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <div class="section-header">
-                <div class="section-subtitle">Connect</div>
-                <h2 class="section-title">Contact & Social Channels</h2>
-                <p class="section-desc">
-                    Reach out for technical collaborations, APRS gateway inquiries, or general amateur radio discussions.
-                </p>
+        <section class="content-section" id="contact">
+            <div class="section-heading">
+                <h2>Contact</h2>
+                <p>Ways to get in touch or connect.</p>
             </div>
 
-            <div class="cards-grid" style="max-width: 800px; margin: 0 auto;">
-                <div class="card" style="text-align: center; align-items: center;">
-                    <div class="card-icon" style="margin: 0 auto 1rem auto;"><i class="fa-solid fa-envelope"></i></div>
-                    <h3 class="card-title">Electronic Mail</h3>
-                    <p class="card-text" style="margin-bottom: 1.5rem;">For inquiries, collaboration, or QSL coordination.</p>
-                    <a href="mailto:9m2pju@hamradio.my" class="btn btn-primary">
-                        <i class="fa-solid fa-paper-plane"></i> 9m2pju@hamradio.my
-                    </a>
-                </div>
-
-                <div class="card" style="text-align: center; align-items: center;">
-                    <div class="card-icon" style="margin: 0 auto 1rem auto;"><i class="fa-brands fa-github"></i></div>
-                    <h3 class="card-title">GitHub Developer Hub</h3>
-                    <p class="card-text" style="margin-bottom: 1.5rem;">Check out all active source code repositories and forks.</p>
-                    <a href="https://github.com/9M2PJU" target="_blank" class="btn btn-secondary">
-                        <i class="fa-brands fa-github"></i> github.com/9M2PJU
-                    </a>
-                </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <a href="mailto:9m2pju@hamradio.my" class="btn-link">
+                    <i class="fa-solid fa-envelope"></i> 9m2pju@hamradio.my
+                </a>
+                <a href="https://hamradio.my" target="_blank" class="btn-link">
+                    <i class="fa-solid fa-globe"></i> hamradio.my
+                </a>
+                <a href="https://www.qrz.com/db/9M2PJU" target="_blank" class="btn-link">
+                    <i class="fa-solid fa-address-book"></i> QRZ (9M2PJU)
+                </a>
+                <a href="https://github.com/9M2PJU" target="_blank" class="btn-link">
+                    <i class="fa-brands fa-github"></i> GitHub (@9M2PJU)
+                </a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>📡 9M2PJU</h3>
-                    <p>
-                        Licensed Amateur Radio Station located in Malaysia. Dedicated to bridging digital communications, open-source Linux engineering, and amateur radio advancement.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>Navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="#about">About Station</a></li>
-                        <li><a href="#projects">Software Projects</a></li>
-                        <li><a href="#activities">Activities</a></li>
-                        <li><a href="https://hamradio.my" target="_blank">Blog (HamRadio.my)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>External Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.qrz.com/db/9M2PJU" target="_blank">QRZ.com Profile</a></li>
-                        <li><a href="https://github.com/9M2PJU" target="_blank">GitHub Profile</a></li>
-                        <li><a href="https://aur.archlinux.org/packages?K=9M2PJU" target="_blank">Arch Linux AUR</a></li>
-                        <li><a href="mailto:9m2pju@hamradio.my">Email Station</a></li>
-                    </ul>
-                </div>
+    <footer class="site-footer">
+        <div class="wrapper footer-content">
+            <div>
+                &copy; <span id="year">2026</span> 9M2PJU. 73 de 9M2PJU.
             </div>
-            <div class="footer-bottom">
-                <div>&copy; <span id="year">2026</span> 9M2PJU. All Rights Reserved. 73 de 9M2PJU.</div>
-                <div>Designed & Engineered with Open Source.</div>
+            <div>
+                Hosted on GitHub Pages.
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Live UTC Clock
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getUTCHours()).padStart(2, '0');
-            const minutes = String(now.getUTCMinutes()).padStart(2, '0');
-            const seconds = String(now.getUTCSeconds()).padStart(2, '0');
-            document.getElementById('utc-clock').textContent = `${hours}:${minutes}:${seconds} UTC`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Current Year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
