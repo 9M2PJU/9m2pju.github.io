@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9M2PJU - Amateur Radio Station & Open Source Projects</title>
+    <title>9M2PJU - Amateur Radio Station & Public Projects</title>
     
     <!-- SEO & Metadata -->
-    <meta name="description" content="Personal website of 9M2PJU, an amateur radio station based in Kuala Lumpur, Malaysia. Open source projects include Aprx installer, OpenHamClock, MeshBeacon, and Arch Linux AUR packages.">
-    <meta name="keywords" content="9M2PJU, Amateur Radio, Ham Radio, Malaysia, Aprx, OpenHamClock, MeshBeacon, APRS, Packet Radio, Arch Linux AUR">
+    <meta name="description" content="Official website of 9M2PJU, an amateur radio station based in Kuala Lumpur, Malaysia. Directory of public open-source software, radio calculators, APRS tools, and Arch Linux packages.">
+    <meta name="keywords" content="9M2PJU, Amateur Radio, Ham Radio Malaysia, APRS, Aprx, OpenHamClock, MeshBeacon, Arch Linux AUR, Radio Calculators">
     <meta name="author" content="9M2PJU">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://9m2pju.github.io/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="9M2PJU - Amateur Radio Station & Open Source Projects">
-    <meta property="og:description" content="Amateur radio station in Kuala Lumpur, Malaysia. Projects include Aprx installer, OpenHamClock, MeshBeacon, and Arch Linux AUR packages.">
+    <meta property="og:title" content="9M2PJU - Amateur Radio Station & Public Projects">
+    <meta property="og:description" content="Public open-source projects, radio calculators, APRS tools, and utilities by 9M2PJU.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://9m2pju.github.io/">
     <meta property="og:locale" content="en_US">
@@ -22,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="9M2PJU - Amateur Radio Station">
-    <meta name="twitter:description" content="Amateur radio station in Kuala Lumpur, Malaysia. Projects, blog posts, and Linux tools.">
+    <meta name="twitter:description" content="Public projects, tools, and radio utilities by 9M2PJU in Kuala Lumpur, Malaysia.">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -72,7 +72,7 @@
 
             --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --font-code: 'JetBrains Mono', monospace;
-            --radius-default: 10px;
+            --radius-default: 8px;
             --transition-smooth: all 0.2s ease-in-out;
         }
 
@@ -104,18 +104,17 @@
             text-decoration: underline;
         }
 
-        /* Container */
         .wrapper {
             max-width: 1080px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* Header / Navbar */
+        /* Header */
         header.site-header {
             position: sticky;
             top: 0;
-            background: rgba(13, 17, 23, 0.9);
+            background: rgba(13, 17, 23, 0.95);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-default);
             z-index: 100;
@@ -151,7 +150,8 @@
         nav.site-nav {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.25rem;
+            flex-wrap: wrap;
         }
 
         nav.site-nav a {
@@ -167,25 +167,25 @@
 
         /* Hero */
         section.hero-section {
-            padding: 70px 0 50px 0;
+            padding: 60px 0 40px 0;
             display: grid;
             grid-template-columns: 1.3fr 0.7fr;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .hero-text h1 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.2;
             letter-spacing: -0.5px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .hero-text p {
             color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
             max-width: 580px;
         }
 
@@ -199,7 +199,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.55rem 1rem;
+            padding: 0.5rem 0.9rem;
             font-size: 0.88rem;
             font-weight: 600;
             border-radius: 6px;
@@ -213,16 +213,6 @@
             background: var(--bg-card-hover);
             border-color: var(--accent-cyan);
             text-decoration: none;
-        }
-
-        .btn-link.primary {
-            background: #238636;
-            border-color: rgba(240, 246, 252, 0.1);
-            color: #ffffff;
-        }
-
-        .btn-link.primary:hover {
-            background: #2ea043;
         }
 
         /* Station Info Box */
@@ -239,7 +229,7 @@
             color: var(--accent-cyan);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
@@ -248,7 +238,7 @@
         .info-row {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            padding: 0.45rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.88rem;
         }
@@ -270,37 +260,37 @@
 
         /* Sections */
         section.content-section {
-            padding: 60px 0;
+            padding: 50px 0;
             border-top: 1px solid var(--border-default);
         }
 
         .section-heading {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .section-heading h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.25rem;
         }
 
         .section-heading p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Cards Grid */
         .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 1rem;
         }
 
         .project-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-default);
             border-radius: var(--radius-default);
-            padding: 1.25rem;
+            padding: 1.15rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -315,24 +305,24 @@
         .card-head {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.6rem;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .card-head i {
             color: var(--accent-cyan);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .card-head h3 {
-            font-size: 1.1rem;
+            font-size: 1.02rem;
             font-weight: 600;
         }
 
         .card-desc {
             color: var(--text-secondary);
-            font-size: 0.88rem;
-            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.9rem;
             line-height: 1.5;
         }
 
@@ -340,7 +330,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: 0.75rem;
+            padding-top: 0.65rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.8rem;
         }
@@ -354,8 +344,8 @@
             border-radius: 4px;
         }
 
-        /* AUR List */
-        .aur-table {
+        /* Table */
+        .custom-table {
             width: 100%;
             border-collapse: collapse;
             background: var(--bg-surface);
@@ -365,25 +355,25 @@
             font-size: 0.88rem;
         }
 
-        .aur-table th, .aur-table td {
-            padding: 0.75rem 1rem;
+        .custom-table th, .custom-table td {
+            padding: 0.7rem 1rem;
             text-align: left;
             border-bottom: 1px solid var(--border-default);
         }
 
-        .aur-table th {
+        .custom-table th {
             background: rgba(0, 0, 0, 0.2);
             color: var(--text-secondary);
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
         }
 
-        .aur-table tr:last-child td {
+        .custom-table tr:last-child td {
             border-bottom: none;
         }
 
-        .aur-table code {
+        .custom-table code {
             font-family: var(--font-code);
             color: var(--accent-cyan);
         }
@@ -391,8 +381,8 @@
         /* Footer */
         footer.site-footer {
             border-top: 1px solid var(--border-default);
-            padding: 40px 0;
-            margin-top: 40px;
+            padding: 30px 0;
+            margin-top: 30px;
             color: var(--text-muted);
             font-size: 0.85rem;
         }
@@ -408,10 +398,10 @@
         @media (max-width: 768px) {
             section.hero-section {
                 grid-template-columns: 1fr;
-                padding-top: 40px;
+                padding-top: 30px;
             }
             .hero-text h1 {
-                font-size: 1.9rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -423,13 +413,15 @@
         <div class="wrapper header-inner">
             <a href="/" class="site-logo">
                 <span class="callsign-pill">9M2PJU</span>
-                <span>Ham Radio & Code</span>
+                <span>Ham Radio & Projects</span>
             </a>
             <nav class="site-nav">
-                <a href="#projects">Projects</a>
-                <a href="#packages">AUR Packages</a>
+                <a href="#radio-projects">Radio Projects</a>
+                <a href="#mapping-tools">Mapping</a>
+                <a href="#linux-tools">Linux & Utilities</a>
+                <a href="#aur-packages">AUR</a>
+                <a href="#web-apps">Web Apps</a>
                 <a href="https://hamradio.my" target="_blank">Blog</a>
-                <a href="https://github.com/9M2PJU" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
             </nav>
         </div>
     </header>
@@ -442,14 +434,14 @@
             <div class="hero-text">
                 <h1>9M2PJU</h1>
                 <p>
-                    Amateur radio station in Kuala Lumpur, Malaysia. I build and maintain open-source radio tooling, APRS gateway packages, and write articles at <a href="https://hamradio.my" target="_blank">hamradio.my</a>.
+                    Amateur radio station in Kuala Lumpur, Malaysia. I develop open-source amateur radio tools, maintain Arch Linux packages, and publish technical guides at <a href="https://hamradio.my" target="_blank">hamradio.my</a>.
                 </p>
                 <div class="hero-links">
-                    <a href="https://github.com/9M2PJU/aprx-installer" target="_blank" class="btn-link primary">
-                        <i class="fa-solid fa-download"></i> Aprx Installer
+                    <a href="https://github.com/9M2PJU" target="_blank" class="btn-link">
+                        <i class="fa-brands fa-github"></i> GitHub Repositories
                     </a>
                     <a href="https://hamradio.my" target="_blank" class="btn-link">
-                        <i class="fa-solid fa-newspaper"></i> Read Blog
+                        <i class="fa-solid fa-newspaper"></i> Blog (hamradio.my)
                     </a>
                     <a href="https://www.qrz.com/db/9M2PJU" target="_blank" class="btn-link">
                         <i class="fa-solid fa-id-card"></i> QRZ Profile
@@ -485,15 +477,15 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="content-section" id="projects">
+        <!-- Category 1: Amateur Radio & APRS Projects -->
+        <section class="content-section" id="radio-projects">
             <div class="section-heading">
-                <h2>Open Source Projects</h2>
-                <p>Public software repositories and tools maintained on GitHub.</p>
+                <h2>Amateur Radio & APRS Projects</h2>
+                <p>Open-source tools for packet radio, APRS gateways, clocks, and telemetry.</p>
             </div>
 
             <div class="grid-cards">
-                <!-- Aprx Installer -->
+                <!-- aprx-installer -->
                 <article class="project-card">
                     <div>
                         <div class="card-head">
@@ -506,11 +498,11 @@
                     </div>
                     <div class="card-meta">
                         <span class="badge-tag">Shell / C / Docker</span>
-                        <a href="https://github.com/9M2PJU/aprx-installer" target="_blank">View Repository &rarr;</a>
+                        <a href="https://github.com/9M2PJU/aprx-installer" target="_blank">View Repo &rarr;</a>
                     </div>
                 </article>
 
-                <!-- OpenHamClock -->
+                <!-- openhamclock -->
                 <article class="project-card">
                     <div>
                         <div class="card-head">
@@ -518,16 +510,16 @@
                             <h3>openhamclock</h3>
                         </div>
                         <p class="card-desc">
-                            Amateur radio clock displaying solar flux, geomagnetic indices, DX cluster spots, and satellite tracking for station desks.
+                            Portable amateur radio clock displaying solar flux, geomagnetic indices, DX cluster spots, and satellite tracking.
                         </p>
                     </div>
                     <div class="card-meta">
                         <span class="badge-tag">C++ / Telemetry</span>
-                        <a href="https://github.com/9M2PJU/openhamclock" target="_blank">View Repository &rarr;</a>
+                        <a href="https://github.com/9M2PJU/openhamclock" target="_blank">View Repo &rarr;</a>
                     </div>
                 </article>
 
-                <!-- MeshBeacon -->
+                <!-- meshbeacon -->
                 <article class="project-card">
                     <div>
                         <div class="card-head">
@@ -535,25 +527,249 @@
                             <h3>meshbeacon</h3>
                         </div>
                         <p class="card-desc">
-                            LoRa packet gateway that forwards off-grid radio telemetry to global APRS-IS networks.
+                            LoRa packet gateway forwarding off-grid radio telemetry to global APRS-IS networks.
                         </p>
                     </div>
                     <div class="card-meta">
                         <span class="badge-tag">LoRa / APRS</span>
-                        <a href="https://github.com/9M2PJU/meshbeacon" target="_blank">View Repository &rarr;</a>
+                        <a href="https://github.com/9M2PJU/meshbeacon" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-Morse-Code-Trainer -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-wave-square"></i>
+                            <h3>Morse Code Trainer</h3>
+                        </div>
+                        <p class="card-desc">
+                            Web-based Morse code training utility with real-time encoder, decoder, and audio tone synthesis.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Web Audio / JS</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Morse-Code-Trainer" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-Basic-Antenna-Calculator -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-calculator"></i>
+                            <h3>Antenna Calculator</h3>
+                        </div>
+                        <p class="card-desc">
+                            Calculator for dipole, vertical, magnetic loop, and wire antenna lengths across amateur radio bands.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Web App</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Basic-Antenna-Calculator" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-Ham-Radio-Projects-Directory -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-folder-tree"></i>
+                            <h3>Ham Projects Directory</h3>
+                        </div>
+                        <p class="card-desc">
+                            Web portal indexing amateur radio web utilities and calculation tools.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">HTML / CSS / JS</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Ham-Radio-Projects-Directory" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-Amateur-Radio-EmComm-Dashboard -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <h3>EmComm Dashboard</h3>
+                        </div>
+                        <p class="card-desc">
+                            Browser-based emergency communications dashboard for net control, check-ins, and incident logging.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">EmComm / Web</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Amateur-Radio-EmComm-Dashboard" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-T-Display-S3-DX-Cluster -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-microchip"></i>
+                            <h3>T-Display-S3 DX Cluster</h3>
+                        </div>
+                        <p class="card-desc">
+                            ESP32-S3 firmware for LilyGO T-Display-S3 connecting to telnet DX clusters to display spots on a built-in LCD.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">ESP32 / C++</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-T-Display-S3-DX-Cluster" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- ATAK-Civ-Plugins -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <h3>ATAK Civ Plugins</h3>
+                        </div>
+                        <p class="card-desc">
+                            Curated setup scripts and plugin compilation guide for Civilian ATAK field mapping systems.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">ATAK / GIS</span>
+                        <a href="https://github.com/9M2PJU/ATAK-Civ-Plugins" target="_blank">View Repo &rarr;</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Arch Linux Packages Section -->
-        <section class="content-section" id="packages">
+        <!-- Category 2: Navigation & Mapping -->
+        <section class="content-section" id="mapping-tools">
+            <div class="section-heading">
+                <h2>Navigation & Mapping Tools</h2>
+                <p>Grid system conversion and topographic map instruments.</p>
+            </div>
+
+            <div class="grid-cards">
+                <!-- 9M2PJU-Online-Map-and-Compass -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-compass"></i>
+                            <h3>Online Map & Compass</h3>
+                        </div>
+                        <p class="card-desc">
+                            Map and compass simulation tool featuring vector compass, scale rulers, path measurements, and waypoint tracking.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Leaflet / JS</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Online-Map-and-Compass" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-Lat-Long-to-Kertau-RSO-Malaya -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <h3>Lat/Long to Kertau RSO Malaya</h3>
+                        </div>
+                        <p class="card-desc">
+                            Coordinate converter between Latitude/Longitude and the Malayan Rectified Skew Orthomorphic (RSO) Kertau 1948 grid system.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Geodesy / Web</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Lat-Long-to-Kertau-RSO-Malaya" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Category 3: Linux & System Utilities -->
+        <section class="content-section" id="linux-tools">
+            <div class="section-heading">
+                <h2>Linux & System Utilities</h2>
+                <p>System configuration scripts and desktop enhancement tools.</p>
+            </div>
+
+            <div class="grid-cards">
+                <!-- Btrfs Swapfile Script -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-brands fa-linux"></i>
+                            <h3>Btrfs Swapfile & Hibernation</h3>
+                        </div>
+                        <p class="card-desc">
+                            Automated shell script for creating and configuring Btrfs-compatible swapfiles with resume offsets for hibernation.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Shell / Btrfs</span>
+                        <a href="https://github.com/9M2PJU/Btrfs-Compatible-Swapfile-Hibernation-Script" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Asas-Netfilter -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <h3>Asas Netfilter</h3>
+                        </div>
+                        <p class="card-desc">
+                            Reference guide and notes on Linux Netfilter, iptables, and packet filtering fundamentals.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Networking / Linux</span>
+                        <a href="https://github.com/9M2PJU/Asas-Netfilter" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 9M2PJU-Windows-Optimizer -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-brands fa-windows"></i>
+                            <h3>Windows Optimizer</h3>
+                        </div>
+                        <p class="card-desc">
+                            GUI cleanup and optimization utility for Windows systems.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Powershell / GUI</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Windows-Optimizer" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Windows-CMD-Context-Menu -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-square-terminal"></i>
+                            <h3>Windows CMD Context Menu</h3>
+                        </div>
+                        <p class="card-desc">
+                            Registry scripts to add 'Open Command Window Here' for regular and administrator access.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Registry / Batch</span>
+                        <a href="https://github.com/9M2PJU/Windows-CMD-Context-Menu" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Category 4: Arch Linux AUR Packages -->
+        <section class="content-section" id="aur-packages">
             <div class="section-heading">
                 <h2>Arch Linux AUR Packages</h2>
                 <p>PKGBUILD packages maintained on the Arch User Repository.</p>
             </div>
 
-            <table class="aur-table">
+            <table class="custom-table">
                 <thead>
                     <tr>
                         <th>Package Name</th>
@@ -584,6 +800,101 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <!-- Category 5: Web Applications & Calculators -->
+        <section class="content-section" id="web-apps">
+            <div class="section-heading">
+                <h2>Web Applications & Calculators</h2>
+                <p>Public web apps and practical calculation tools.</p>
+            </div>
+
+            <div class="grid-cards">
+                <!-- Daily Quran -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-book-quran"></i>
+                            <h3>Daily Quran PWA</h3>
+                        </div>
+                        <p class="card-desc">
+                            Progressive Web App for reading and listening to the Holy Quran daily with audio support.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">PWA / Audio</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Daily-Quran" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Iftar Time -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-moon"></i>
+                            <h3>Iftar & Prayer Times</h3>
+                        </div>
+                        <p class="card-desc">
+                            Web application for checking Iftar and prayer times across Malaysian zones.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Web App</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Iftar-Time" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Azan Prayer Docker -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-brands fa-docker"></i>
+                            <h3>Azan Prayer Docker</h3>
+                        </div>
+                        <p class="card-desc">
+                            Containerized environment to fetch prayer times from JAKIM and play audio notifications via cron.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Docker / Python</span>
+                        <a href="https://github.com/9M2PJU/Azan-Prayer-Docker" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Financial Calculators -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-coins"></i>
+                            <h3>Malaysian Finance Tools</h3>
+                        </div>
+                        <p class="card-desc">
+                            Suite of standalone calculators for Zakat, KWSP/EPF contributions, ASB dividends, and mortgage estimates.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">Web Calculators</span>
+                        <a href="https://github.com/9M2PJU/KWSP-EPF-Calculator" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Torque Specs -->
+                <article class="project-card">
+                    <div>
+                        <div class="card-head">
+                            <i class="fa-solid fa-wrench"></i>
+                            <h3>Bolt & Nut Torque Specs</h3>
+                        </div>
+                        <p class="card-desc">
+                            Reference app to look up torque specifications and unit conversions for common bolt grades.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="badge-tag">React / Vite</span>
+                        <a href="https://github.com/9M2PJU/9M2PJU-Common-Bolts-and-Nuts-Torque-Specs" target="_blank">View Repo &rarr;</a>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- Contact Section -->
