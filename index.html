@@ -41,7 +41,7 @@
     <meta property="og:description" content="Personal portal of 9M2PJU, licensed amateur radio station in Kuala Lumpur, Malaysia (Grid: OJ03). Station parameters, technical blog, and GitHub activity.">
     <meta property="og:url" content="https://9m2pju.github.io/">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/7990472?v=4">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/991353?v=4">
     <meta property="og:image:alt" content="9M2PJU Avatar">
     <meta property="og:image:width" content="460">
     <meta property="og:image:height" content="460">
@@ -50,7 +50,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="9M2PJU | Amateur Radio Station">
     <meta name="twitter:description" content="Personal website and GitHub activity charts for 9M2PJU in Kuala Lumpur, Malaysia.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/7990472?v=4">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/991353?v=4">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -105,7 +105,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://github-readme-activity-graph.vercel.app" crossorigin>
+    <link rel="preconnect" href="https://ghchart.rshah.org" crossorigin>
+    <link rel="preconnect" href="https://github-readme-stats.vercel.app" crossorigin>
+    <link rel="preconnect" href="https://streak-stats.demolab.com" crossorigin>
     <link rel="preconnect" href="https://github-profile-summary-cards.vercel.app" crossorigin>
 
     <!-- Google Fonts -->
@@ -446,7 +448,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">ITU / CQ Zone</span>
-                    <span class="info-val">Zone 54 / Zone 28</span>
+                    <span class="info-val">ITU 54 · CQ 28</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Time Zone</span>
@@ -463,25 +465,35 @@
             </div>
 
             <div class="charts-container">
-                <!-- Activity Graph -->
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=9M2PJU&theme=react-dark&hide_border=true&area=true" width="912" height="300" loading="lazy" alt="9M2PJU Contribution Activity Graph" />
-                
-                <!-- Profile Details & Stats Row -->
+                <!-- Contribution Chart (static, reliable) -->
+                <a href="https://github.com/9M2PJU?tab=overview" target="_blank" rel="noopener noreferrer" aria-label="View 9M2PJU GitHub contributions">
+                    <img src="https://ghchart.rshah.org/9M2PJU" width="912" height="150" loading="lazy" alt="9M2PJU GitHub contribution chart" onerror="this.style.display='none'" />
+                </a>
+
+                <!-- GitHub Stats & Streak Row -->
                 <div class="charts-row">
-                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="GitHub Profile Details Card" />
-                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="GitHub Stats Summary Card" />
+                    <img src="https://github-readme-stats.vercel.app/api?username=9M2PJU&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" width="430" height="200" loading="lazy" alt="GitHub Stats Summary Card" onerror="this.style.display='none'" />
+                    <img src="https://streak-stats.demolab.com?user=9M2PJU&theme=tokyonight&hide_border=true" width="430" height="200" loading="lazy" alt="GitHub Streak Stats Card" onerror="this.style.display='none'" />
                 </div>
 
-                <!-- Languages Row -->
+                <!-- Profile Details & Top Languages Row -->
                 <div class="charts-row">
-                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="Repositories per Language Card" />
-                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="Most Committed Languages Card" />
+                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="GitHub Profile Details Card" onerror="this.style.display='none'" />
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=9M2PJU&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" width="340" height="200" loading="lazy" alt="Most Used Languages Card" onerror="this.style.display='none'" />
+                </div>
+
+                <!-- Languages Breakdown Row -->
+                <div class="charts-row">
+                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="Repositories per Language Card" onerror="this.style.display='none'" />
+                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=9M2PJU&theme=tokyonight" width="340" height="200" loading="lazy" alt="Most Committed Languages Card" onerror="this.style.display='none'" />
                 </div>
 
                 <!-- Productive Time -->
                 <div class="charts-row">
-                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=9M2PJU&theme=tokyonight&utcOffset=8" width="340" height="200" loading="lazy" alt="Productive Time Breakdown Card (UTC+8)" />
+                    <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=9M2PJU&theme=tokyonight&utcOffset=8" width="340" height="200" loading="lazy" alt="Productive Time Breakdown Card (UTC+8)" onerror="this.style.display='none'" />
                 </div>
+
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Charts not loading? <a href="https://github.com/9M2PJU">View the live GitHub profile</a>.</p>
             </div>
         </section>
 
@@ -499,6 +511,9 @@
                 <a href="https://wise.com/pay/me/faizulz13" target="_blank" rel="noopener noreferrer" class="btn-link" style="background: #2ed06e; color: #000000; border-color: #2ed06e; font-weight: 700;">
                     <i class="fa-solid fa-credit-card"></i> Support via Wise
                 </a>
+                <a href="https://paypal.me/9M2PJU" target="_blank" rel="noopener noreferrer" class="btn-link" style="background: #00457c; color: #ffffff; border-color: #00457c; font-weight: 700;">
+                    <i class="fa-brands fa-paypal"></i> Donate via PayPal
+                </a>
             </div>
         </section>
 
@@ -510,8 +525,8 @@
             </div>
 
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
-                <a href="mailto:9m2pju@hamradio.my" class="btn-link" aria-label="Send email to 9M2PJU">
-                    <i class="fa-solid fa-envelope"></i> 9m2pju@hamradio.my
+                <a href="mailto:9m2pju@gmail.com" class="btn-link" aria-label="Send email to 9M2PJU">
+                    <i class="fa-solid fa-envelope"></i> 9m2pju@gmail.com
                 </a>
                 <a href="https://hamradio.my" target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="Visit Technical Blog">
                     <i class="fa-solid fa-globe"></i> hamradio.my
